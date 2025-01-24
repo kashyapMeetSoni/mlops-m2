@@ -28,6 +28,3 @@ jobs:
       
       - name: Run MLflow experiments
         run: python model_with_mlflow.py
-
-      - name: Run DVC checkout
-        run: python dvc_checkout.py
