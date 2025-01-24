@@ -1,6 +1,6 @@
 name: M2 Workflow
 
-on:  # No extra space here
+on:
   push:
     branches: [ dev ]
 
