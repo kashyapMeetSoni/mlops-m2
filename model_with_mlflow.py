@@ -34,7 +34,12 @@ def train_and_log_model(data_path, experiment_name, run_name, model_params=None)
         mlflow.log_params(model_params)
         mlflow.log_metric("mse", mse)
         mlflow.log_metric("r2", r2)
-        mlflow.sklearn.log_model(model, "model")  # Log the model itself
+
+        # Create an example input for the model
+        input_example = pd.DataFrame(X_train[:1])  # Use the first row of training data
+
+        # Log the model with the input example
+        mlflow.sklearn.log_model(model, "model", input_example=input_example)
 
         print(f"Run '{run_name}' of experiment '{experiment_name}' completed with MSE: {mse:.2f}, R2: {r2:.2f}")
 
