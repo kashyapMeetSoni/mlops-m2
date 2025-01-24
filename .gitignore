@@ -1,0 +1,11 @@
+# DVC files
+.dvc/cache
+.dvc/tmp
+.dvc/run-cache
+.dvc/cloud
+.dvc/updater
+.dvc/state
+.dvc/lock
+
+# Data files (tracked by DVC)
+/data.csv
